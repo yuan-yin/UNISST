@@ -11,7 +11,7 @@ Sea Surface Temperature (SST) data remotely detected from satellites are inevita
 
 To download the cloud dataset, please check https://doi.org/10.6084/m9.figshare.9145016.
 
-To download the SST dataset, please sign in to Copernicus Marine environment monitoring service, check the product at http://marine.copernicus.eu/services-portfolio/access-to-products/?option=com_csw&view=details&product_id=GLOBAL_ANALYSIS_FORECAST_PHY_001_024, and select corresponding regions. For training and validation sets, select the period from 2018-01-01 00:30 to 2018-12-31 23:30 between latitude 20°~25.25°N (+20~+25.25) and longitude 34.75°~40W (-40~-34.75). For test set, select the period from 2019-01-01 00:30 to 2019-06-30 23:30 between latitude 14.75°~20°S (-20~-14.75) and longitude 14.75°-20W (-20~-14.75).
+To download the SST dataset, please sign in to Copernicus Marine environment monitoring service, check the product at http://marine.copernicus.eu/services-portfolio/access-to-products/?option=com_csw&view=details&product_id=GLOBAL_ANALYSIS_FORECAST_PHY_001_024, and select corresponding regions. For training and validation sets, select the period from 2018-01-01 00:30 to 2018-12-31 23:30 between latitude 20°\~25.25°N (+20°\~+25.25°) and longitude 34.75°\~40°W (-40°\~-34.75°). For test set, select the period from 2019-01-01 00:30 to 2019-06-30 23:30 between latitude 14.75°\~20°S (-20°\~-14.75°) and longitude 14.75°\~20°W (-20°\~-14.75°).
 
 ## Installation of Requirements
 
