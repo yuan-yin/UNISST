@@ -1,0 +1,13 @@
+_common: &common
+  batch_size: 16
+  num_workers: 4
+  shuffle: True
+  drop_last: True
+  size: all
+  train: True
+  pin_memory: True
+
+sst:
+    <<: *common
+    root: /path/to/the/dataset
+    group: train

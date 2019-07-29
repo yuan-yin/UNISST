@@ -1,0 +1,94 @@
+experiment:
+  _name: unisst
+  nepoch: 100
+  device: &device cuda
+  niter: 50
+  type_gan: hinge
+  root: /path/to/experiment/storage
+  num_dis_step: 2
+  fid_fvd: True
+  colorize: True
+
+  writers:
+    - _name: tensorboard
+
+modules:
+  gen:
+    _name: gen_3d
+    ngf: 32
+    init_name: normal
+    init_gain: 0.02
+    input_nc: 1
+    output_nc: 1
+    
+  dis_vid:
+    _name: dis_3d
+    ndf: 32
+    init_name: normal
+    init_gain: 0.02
+    input_nc: 1
+    n_layers: 6
+    pooling: True
+
+  dis_img:
+    _name: dis
+    ndf: 32
+    init_name: normal
+    init_gain: 0.02
+    input_nc: 1
+    n_layers: 6
+
+corruption:
+  _name: cloud
+  time_steps: 10800
+  threshold: 0.070
+  root: /data/yiny/sst/cloud_dataset.npy #/path/to/cloud/set
+
+corruption_test:
+  _name: cloud
+  time_steps: 10800
+  threshold: 0.070
+  root: /data/yiny/sst/cloud_dataset.npy #/path/to/cloud/set
+
+datasets:
+  train:
+    _name:  &dataset_name sst
+    group: train
+    root: /data/yiny/sst/global-analysis-forecast-phy-001-024-hourly-t-u-v-ssh_train+val.nc #/path/to/val/set
+    shuffle: True
+    batch_size: &batch_size 1
+    num_workers: 0
+    interval: 6
+
+  val:
+    _name: *dataset_name
+    group: val
+    root: /data/yiny/sst/global-analysis-forecast-phy-001-024-hourly-t-u-v-ssh_train+val.nc #/path/to/val/set
+    shuffle: True
+    batch_size: *batch_size
+    drop_last: True
+    num_workers: 0
+    interval: 6
+
+  test:
+    _name: *dataset_name
+    group: test
+    root: /data/yiny/sst/global-analysis-forecast-phy-001-024-hourly-t-u-v-ssh_test.nc #/path/to/test/set
+    shuffle: True
+    batch_size: *batch_size
+    drop_last: True
+    num_workers: 0
+    interval: 6
+
+optimizers:
+  optim_gen:
+    _name: adam
+    _modules: gen
+    lr: 0.0001
+    betas: [0., 0.999]
+
+  optim_dis:
+    _name: adam
+    _modules: [dis_vid, dis_img]
+    lr: 0.0001
+    betas: [0., 0.999]

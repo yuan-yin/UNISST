@@ -1,0 +1,17 @@
+tqdm
+numpy
+torch
+torchvision
+git+git://github.com/IDSIA/sacred.git#egg=sacred
+git+https://github.com/lanpa/tensorboardX#egg=tensorboardX
+visdom
+pyyaml
+prettytable
+pytorch-ignite
+lmdb
+imageio
+scikit-image
+imageio-ffmpeg
+pymongo
+tensorflow>=1.7.0,<2.0
+tensorflow-hub

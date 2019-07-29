@@ -1,0 +1,3 @@
+cloud:
+  time_steps: 3600
+  threshold: 0.07

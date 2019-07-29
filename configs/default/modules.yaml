@@ -1,0 +1,12 @@
+_net_common: &net_common
+  init_name: orthogonal
+  init_gain: 0.02
+
+gen_3d:
+  <<: *net_common
+
+dis_3d:
+  <<: *net_common
+
+dis:
+  <<: *net_common

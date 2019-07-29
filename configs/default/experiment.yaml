@@ -1,0 +1,7 @@
+_common: &common
+  nepoch: 10
+  device: cuda
+  niter: 200
+
+unisr_3d:
+  <<: *common
