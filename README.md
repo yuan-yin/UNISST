@@ -1,5 +1,5 @@
 # Unsupervised Inpainting for Occluded Sea Surface Temperature Sequences
-Repository for Unsupervised Inpainting for Occluded Sea Surface Temperature Sequences (Yin et al., 2019)
+Repository for Unsupervised Inpainting for Occluded Sea Surface Temperature Sequences (Yin et al., 2019) presented at The 9th International Workshop on Climate Informatics in October 2019.
 
 ## Abstract
 
